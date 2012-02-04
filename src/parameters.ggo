@@ -1,0 +1,59 @@
+# 
+# Copyright (C) 2004-2012 Hervé Rouault <herve.rouault@pasteur.fr>
+# 
+# This file is part of Cellmech.
+# 
+# Cellmech is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+# 
+# Cellmech is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public License
+# along with Cellmech. If not, see <http://www.gnu.org/licenses/>.
+# 
+
+     
+purpose  "Simulation of tissue growth"
+
+     # Options
+
+option "model" m "Model category"
+            int typestr="int" required
+
+option "alpha" a "Parameter specifying the stiffness of the system"
+            double   typestr="double"  required
+
+option "beta" b "Parameter imposing the thickness of the lattice"
+            double   typestr="double"  default="1.0" optional
+
+option "gamma" g "Parameter imposing the smoothing of the thickness"
+            double   typestr="double"  default="10.0" optional
+
+option "pol_force" p "Parameter giving the importance of Myo2 polarization"
+            double   typestr="double"  default="1.0"  optional
+
+option "sizeable_cell"  s  "Flag autorizing varying intrinsic area"
+            flag off
+
+option "third_dim"  t  "Flag autorizing a varying thickness"
+            flag off
+
+option "rand_force"  r  "Flag autorizing a random force being appied to the lattice"
+            flag off
+
+option "rand_seed"  u  "Seeding mode of the rng"
+            flag off
+
+option "cycle" c "Parameter specifying the sharpeness of the cell cycle"
+            double   typestr="double"  required
+
+option "clone_cycle" l "Parameter specifying the factor for the length of the cell cycle in the clone"
+            double   typestr="double"  required
+
+option "nblat" n "Parameter specifying number of desired lattices"
+            double   typestr="int"  required
